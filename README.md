@@ -51,11 +51,27 @@ The system consists of the following ROS nodes:
 3. **confirmation_listener**: Listens for confirmation signals from the kitchen or tables.
 4. **timeout_handler**: Manages timeouts and ensures the robot returns to home if not attended.
 
-### Code Structure
-- `src/butler_robot/order_listener.py`: Handles incoming orders.
-- `src/butler_robot/movement_controller.py`: Manages the robot's movement logic.
-- `src/butler_robot/confirmation_listener.py`: Listens for confirmations.
-- `src/butler_robot/timeout_handler.py`: Handles timeout scenarios.
+### PROJECT STRUCTURE:
+butler_robot/
+├── launch/
+│   └── robot_butler.launch
+├── src/
+│   ├── robot_butler_node.py
+│   ├── robot_movement.py
+│   ├── order_handler.py
+│   ├── confirmation_handler.py
+│   ├── cancellation_handler.py
+│   └── utils.py
+├── CMakeLists.txt
+└── package.xml
+
+### Code File
+The `src/robot_butler_node.py` file starts all necessary nodes and sets required parameters.
+The `src/robot_movement.py` This script contains functions to control the robot's movement.
+The `src/order_handler.py` Manages incoming orders, including single and multiple orders.
+The `src/confirmation_handler.py` Manages confirmations from the kitchen and tables.
+The `src/cancellation_handler.py` Handles order cancellations at different stages.
+The `src/utils.py` Contains utility functions used across different modules.
 
 ### Launch File
 The `butler_robot.launch` file starts all necessary nodes and sets required parameters.
