@@ -46,10 +46,12 @@ This project is designed to implement a butler robot that can handle food delive
 ### ROS Nodes
 The system consists of the following ROS nodes:
 
-1. **order_listener**: Listens for incoming orders and triggers the robot's movement.
-2. **movement_controller**: Controls the robot's movements based on the current task.
-3. **confirmation_listener**: Listens for confirmation signals from the kitchen or tables.
-4. **timeout_handler**: Manages timeouts and ensures the robot returns to home if not attended.
+1. **robot_butler_node**: Handles the main control flow of the robot, managing tasks such as receiving orders, delegating movements, and coordinating confirmations and cancellations.
+2. **robot_movement**: Controls the robot's navigation to predefined locations including the kitchen, tables, and home position using ROS navigation stack.
+3. **order_handler**: Manages the queue and execution of incoming orders, ensuring efficient processing of single and multiple orders.
+4. **confirmation_handler**: Handles the confirmation process from the kitchen and tables, implementing timeout mechanisms to manage unattended tasks.
+5. **cancellation_handler**: Manages the logic for order cancellations, ensuring the robot returns to the appropriate positions based on the stage of the task.
+6. **utils**: Provides utility functions for logging, configuration loading, and other common tasks used across the project's modules.
 
 ### PROJECT STRUCTURE:
 butler_robot/
@@ -66,12 +68,17 @@ butler_robot/
 └── package.xml
 
 ### Code File
-The `src/robot_butler_node.py` file starts all necessary nodes and sets required parameters.
-The `src/robot_movement.py` This script contains functions to control the robot's movement.
-The `src/order_handler.py` Manages incoming orders, including single and multiple orders.
-The `src/confirmation_handler.py` Manages confirmations from the kitchen and tables.
-The `src/cancellation_handler.py` Handles order cancellations at different stages.
-The `src/utils.py` Contains utility functions used across different modules.
+`src/robot_butler_node.py` The main script that controls the robot's behavior based on incoming orders.
+
+`src/robot_movement.py` This script contains functions to control the robot's movement.
+
+`src/order_handler.py` Manages incoming orders, including single and multiple orders.
+
+`src/confirmation_handler.py` Manages confirmations from the kitchen and tables.
+
+`src/cancellation_handler.py` Handles order cancellations at different stages.
+
+`src/utils.py` Contains utility functions used across different modules.
 
 ### Launch File
 The `butler_robot.launch` file starts all necessary nodes and sets required parameters.
