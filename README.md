@@ -4,6 +4,12 @@
 ## Overview
 This project is designed to implement a butler robot that can handle food delivery tasks in a restaurant setting. The robot can move from its home position to the kitchen, pick up food, deliver it to the specified table, and return to its home position. Various scenarios are handled, such as waiting for confirmation, handling multiple orders, and dealing with cancellations.
 
+## Features
+Autonomous navigation to the kitchen and tables.
+Order confirmation handling with timeout mechanisms.
+Cancellation handling at different stages of the task.
+Efficient processing of multiple orders.
+
 ## Requirements
 - ROS Noetic
 - Python 3
@@ -35,8 +41,21 @@ This project is designed to implement a butler robot that can handle food delive
    ```sh
    source devel/setup.bash
    ```
+## Configuration
 
-6. **Run the Launch File**: Use the provided launch file to start the robot's operation.
+1. **Locations Configuration**: Define the coordinates for home, kitchen, and tables in a configuration file.
+   ```sh
+   locations.yaml
+   ```
+   
+## Running the project
+
+1. **Run the Project**: Start the ROS Master.
+   ```sh
+   roscore
+   ```
+   
+2. **Launch the Butler Robot node**: Use the provided launch file to start the robot's operation.
    ```sh
    roslaunch butler_robot butler_robot.launch
    ```
@@ -54,6 +73,7 @@ The system consists of the following ROS nodes:
 6. **utils**: Provides utility functions for logging, configuration loading, and other common tasks used across the project's modules.
 
 ### PROJECT STRUCTURE:
+
   ```sh
 butler_robot/
 ├── launch/
