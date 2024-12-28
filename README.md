@@ -2,15 +2,21 @@
 # Butler Robot
 
 ## Overview
+
 This project is designed to implement a butler robot that can handle food delivery tasks in a restaurant setting. The robot can move from its home position to the kitchen, pick up food, deliver it to the specified table, and return to its home position. Various scenarios are handled, such as waiting for confirmation, handling multiple orders, and dealing with cancellations.
 
 ## Features
+
 Autonomous navigation to the kitchen and tables.
+
 Order confirmation handling with timeout mechanisms.
+
 Cancellation handling at different stages of the task.
+
 Efficient processing of multiple orders.
 
 ## Requirements
+
 - ROS Noetic
 - Python 3
 
@@ -43,10 +49,7 @@ Efficient processing of multiple orders.
    ```
 ## Configuration
 
-1. **Locations Configuration**: Define the coordinates for home, kitchen, and tables in a configuration file.
-   ```sh
-   locations.yaml
-   ```
+1. **Locations Configuration**: Define the coordinates for home, kitchen, and tables in a configuration file (e.g., `locations.yaml`).
    
 ## Running the project
 
@@ -63,6 +66,7 @@ Efficient processing of multiple orders.
 ## Technical Documentation
 
 ### ROS Nodes
+
 The system consists of the following ROS nodes:
 
 1. **robot_butler_node**: Handles the main control flow of the robot, managing tasks such as receiving orders, delegating movements, and coordinating confirmations and cancellations.
