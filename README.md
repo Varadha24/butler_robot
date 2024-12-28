@@ -92,6 +92,22 @@ The `butler_robot.launch` file starts all necessary nodes and sets required para
 5. **Multiple Orders**: Handles delivery to multiple tables in a single trip.
 6. **Conditional Delivery**: Skips tables or returns to the kitchen based on confirmation or cancellation.
 
+## Functionality
+
+**Move to Kitchen**
+The robot moves from the home position to the kitchen to pick up food.
+**Move to Table**
+The robot moves from the kitchen to the specified table to deliver food.
+**Return to Home**
+After completing its delivery task, the robot returns to its home position.
+**Handling Scenarios**
+The robot handles various scenarios such as waiting for confirmation, handling timeouts, and managing order cancellations efficiently.
+**Testing**
+Unit Testing
+Test individual functions for correctness using unit tests.
+**Integration Testing**
+Test the entire workflow to ensure smooth operation of the robot in a simulated environment.
+
 ## Notes
 - Ensure all dependencies are installed and configured correctly.
 - Modify the source code to adapt to specific hardware or requirements.
