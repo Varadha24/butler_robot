@@ -42,25 +42,31 @@ Efficient processing of multiple orders.
    cd ~/catkin_ws
    catkin_make
    ```
-
-5. **Source the Workspace**:
-   ```sh
-   source devel/setup.bash
-   ```
-## Configuration
-
-1. **Locations Configuration**: Define the coordinates for home, kitchen, and tables in a configuration file (e.g., `locations.yaml`).
    
-## Running the project
-
-1. **Run the Project**: Start the ROS Master.
+5. **Run the Project**: Start the ROS Master.
    ```sh
    roscore
    ```
+
+6. **Source the Workspace**:
+   ```sh
+   source devel/setup.bash
+   ```
    
-2. **Launch the Butler Robot node**: Use the provided launch file to start the robot's operation.
+7. **Launch the Butler Robot node**: Use the provided launch file to start the robot's operation.
    ```sh
    roslaunch butler_robot butler_robot.launch
+   ```
+   
+## Configuration
+
+1. **Locations Configuration**: Define the coordinates for home, kitchen, and tables in a configuration file (e.g., `locations.yaml`).
+   ```sh
+   home: [0.0, 0.00]
+   kitchen: [5.0, 5.0]
+   table_1: [10.0, 0.0]
+   table_2: [10.0, 5.0]
+   table_3: [10.0, 10.0]
    ```
 
 ## Technical Documentation
@@ -90,6 +96,7 @@ butler_robot/
 │   ├── cancellation_handler.py
 │   └── utils.py
 ├── CMakeLists.txt
+├── LICENSE
 └── package.xml
 ```
 
@@ -106,8 +113,13 @@ butler_robot/
 
 `src/utils.py` Contains utility functions used across different modules.
 
+### Build Files
+`CMakeLists.txt`: Defines the build configuration for the project.
+
+`package.xml`: Specifies the package dependencies and metadata.
+
 ### Launch File
-The `butler_robot.launch` file starts all necessary nodes and sets required parameters.
+`butler_robot.launch` file starts all necessary nodes and sets required parameters.
 
 ## Scenarios Handled
 
