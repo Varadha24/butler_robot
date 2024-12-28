@@ -54,6 +54,7 @@ The system consists of the following ROS nodes:
 6. **utils**: Provides utility functions for logging, configuration loading, and other common tasks used across the project's modules.
 
 ### PROJECT STRUCTURE:
+  ```sh
 butler_robot/
 ├── launch/
 │   └── robot_butler.launch
@@ -66,6 +67,7 @@ butler_robot/
 │   └── utils.py
 ├── CMakeLists.txt
 └── package.xml
+```
 
 ### Code File
 `src/robot_butler_node.py` The main script that controls the robot's behavior based on incoming orders.
@@ -96,15 +98,20 @@ The `butler_robot.launch` file starts all necessary nodes and sets required para
 
 **Move to Kitchen**
 The robot moves from the home position to the kitchen to pick up food.
+
 **Move to Table**
 The robot moves from the kitchen to the specified table to deliver food.
+
 **Return to Home**
 After completing its delivery task, the robot returns to its home position.
+
 **Handling Scenarios**
 The robot handles various scenarios such as waiting for confirmation, handling timeouts, and managing order cancellations efficiently.
 **Testing**
+
 Unit Testing
 Test individual functions for correctness using unit tests.
+
 **Integration Testing**
 Test the entire workflow to ensure smooth operation of the robot in a simulated environment.
 
