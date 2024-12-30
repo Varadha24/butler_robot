@@ -145,7 +145,7 @@ After completing its delivery task, the robot returns to its home position.
 The robot handles various scenarios such as waiting for confirmation, handling timeouts, and managing order cancellations efficiently.
 **Testing**
 
-Unit Testing
+**Unit Testing**
 Test individual functions for correctness using unit tests.
 
 **Integration Testing**
@@ -155,5 +155,3 @@ Test the entire workflow to ensure smooth operation of the robot in a simulated 
 - Ensure all dependencies are installed and configured correctly.
 - Modify the source code to adapt to specific hardware or requirements.
 
-## Contact
-For further assistance, contact Varadha24.
